@@ -1,5 +1,5 @@
 # BaybayinJS ᜊᜌ᜔ᜊᜌᜒᜒᜈ᜔
 
-Baybayin translator
+Baybayin encoder
 
 (c) John Martin R. Disuanco

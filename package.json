@@ -1,7 +1,7 @@
 {
   "name": "baybayin",
   "version": "1.0.0",
-  "description": "baybayin translator",
+  "description": "baybayin encoder",
   "private": true,
   "main": "./src/baybayin.js",
   "directories": {
