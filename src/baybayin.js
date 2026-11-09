@@ -125,11 +125,8 @@ const baybayin = (baybay) => {
     } else if (vowels.includes(prevOriginal) && vowels.includes(curr)) {
       acc += independentVowels[curr]
     } else {
+      // body() already returns the dependent vowel mark for i, e, o, u: adding it again doubled the mark
       acc += typeof body(curr) === 'undefined' ? '' : body(curr)
-      acc +=
-        typeof dependentVowels[curr] === 'undefined'
-          ? ''
-          : dependentVowels[curr]
     }
 
     if (curr === ',') {
@@ -149,6 +146,8 @@ const baybayin = (baybay) => {
       }
     }
     if (curr === ' ') {
+      // a consonant that ends a word needs its virama before the space ("am" is not "ama")
+      if (allowed.includes(prevOriginal) && !vowels.includes(prevOriginal) && prevOriginal !== ',' && prevOriginal !== '.' && !acc.endsWith(virama)) acc += virama
       acc += ' '
     }
     return acc
